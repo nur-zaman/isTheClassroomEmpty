@@ -8,8 +8,9 @@ const RESULT = document.getElementById("result");
 
 const date = moment().format("YYYY-MM-DD")
 const day = moment().format("dddd");  
-// const day = 'Tuesday'
 const now = moment().toString();
+
+// const day = 'Tuesday'
 // const now = 'Tue Jun 30 2022 05:05:34 pm'
 
 
