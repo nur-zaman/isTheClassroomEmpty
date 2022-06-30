@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "isTheClassroomEmpty?",
+    "short_name": "ITCE?",
+    "description": "A site to check if a classroom is empty in BRAC University",
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -15,5 +16,5 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "fullscreen"
 }
