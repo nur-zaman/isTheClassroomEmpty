@@ -1,91 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- favico -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TM2958SL6N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TM2958SL6N"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-TM2958SL6N');
-</script>
+      gtag("config", "G-TM2958SL6N");
+    </script>
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>Is The Classroom Empty </title>
-</head>
-<body class=" bg-neutral-900 text-slate-200 font-mono ">
-    
-  <div class="container mx-auto mt-5 p-5 border-b-2 text-5xl text-center align-middle shadow-lg shadow-slate-900">
-    Is The Classroom Empty?
-  </div>
-  <div class="flex flex-wrap">
-
-    <div class="max-w-sm rounded overflow-hidden shadow-lg shadow-slate-900 mx-auto my-8 h-fit ">
-        
-
-      <div class="mb-2 flex justify-center">
-        
-        <a href="index.html"><span class=" inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"><i class="fa fa-home"></i></span></a>
-      </div>
-  
-
-
-      <div class="px-6 py-4 bg-neutral-800 ">
-        <table class="border-collapse border border-slate-500 w-full text-center">
-
-            <div class="mb-2 flex justify-center flex-col">
-        
-               Full List of Empty Classrooms.
-                <div>Updated on:</div>
-                <div id="update"></div>
-              </div>
-          <thead>
-            <tr>
-              <th class="border border-slate-600">Class Room Number</th>
-              
-            </tr>
-          </thead>
-          <tbody id = "rows">
-          </tbody>
-        </table>
-       
-      </div>
-  
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Is The Classroom Empty</title>
+  </head>
+  <body class="bg-neutral-900 text-slate-200 font-mono">
+    <div
+      class="container mx-auto mt-5 p-5 border-b-2 text-5xl text-center align-middle shadow-lg shadow-slate-900"
+    >
+      Is The Classroom Empty?
     </div>
-    
+    <div class="flex flex-wrap">
+      <div
+        class="max-w-sm rounded overflow-hidden shadow-lg shadow-slate-900 mx-auto my-8 h-fit"
+      >
+        <div class="mb-2 flex justify-center">
+          <a href="index.html"
+            ><span
+              class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
+              ><i class="fa fa-home"></i></span
+          ></a>
+        </div>
 
-  </div>
-  <div class="flex items-end justify-center px-6 py-4 h-auto ">
+        <div class="px-6 py-4 bg-neutral-800">
+          <table
+            class="border-collapse border border-slate-500 w-full text-center"
+          >
+            <div class="mb-2 flex justify-center flex-col">
+              Full List of Empty Classrooms.
+              <div>Updated on:</div>
+              <div id="update"></div>
+            </div>
+            <thead>
+              <tr>
+                <th class="border border-slate-600">Class Room Number</th>
+              </tr>
+            </thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="flex items-end justify-center px-6 py-4 h-auto">
+      <a href="http://github.com/nur-zaman" target="_blank"
+        ><span
+          class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
+          ><i class="fab fa-github"></i></span
+      ></a>
+    </div>
 
-    <a href="http://github.com/nur-zaman" target="_blank"><span class=" inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"><i class="fab fa-github"></i></span></a>
-
-   
-  </div>
-    
-
-
-
-      <script src="fullList.js"></script>   
-</body>
+    <script src="fullList.js"></script>
+  </body>
 </html>

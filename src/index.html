@@ -1,75 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="favicon/site.webmanifest">
 
     <!-- favico -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TM2958SL6N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-  gtag('config', 'G-TM2958SL6N');
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TM2958SL6N"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-TM2958SL6N");
+    </script>
 
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script src="https://momentjs.com/downloads/moment.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <title>Is The Classroom Empty </title>
-</head>
-<body class=" bg-neutral-900 text-slate-200 font-mono ">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     
-  <div class="container mx-auto mt-5 p-5 border-b-2 text-5xl text-center align-middle shadow-lg shadow-slate-900">
-    Is The Classroom Empty?
-  </div>
-      <div class="max-w-sm rounded overflow-hidden shadow-lg shadow-slate-900 mx-auto my-8 h-fit ">
+    <title>Is The Classroom Empty</title>
+        <!-- webmanifest -->
+        
+        
+  </head>
+  <body class="bg-neutral-900 text-slate-200 font-mono">
+    <div
+      class="container mx-auto mt-5 p-5 border-b-2 text-5xl text-center align-middle shadow-lg shadow-slate-900"
+    >
+      Is The Classroom Empty?
+    </div>
+    <div
+      class="max-w-sm rounded overflow-hidden shadow-lg shadow-slate-900 mx-auto my-8 h-fit"
+    >
+      <div class="mb-2 flex justify-center"></div>
 
-        <div class="mb-2 flex justify-center">
+      <div class="px-6 py-4 bg-neutral-800">
+        <div class="font-bold text-xl mb-2 text-center">Enter Room Number</div>
+        <div class="flex text-slate-400 text-base text-center justify-center">
+          <input
+            type="text"
+            value="UB"
+            disabled="disabled"
+            class="appearance-none block bg-gray-200 text-gray-700 border border-gray-200 rounded-l rounded-r-none py-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-center font-sans text-xl w-16"
+          />
+          <input
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]*"
+            minlength="5"
+            maxlength="5"
+            placeholder="20701"
+            id="roomNum"
+            class="appearance-none block bg-gray-200 text-gray-700 border rounded-r rounded-l-none py-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-center font-sans text-xl"
+          />
         </div>
-
-
-        <div class="px-6 py-4 bg-neutral-800 ">
-          <div class="font-bold text-xl mb-2 text-center">Enter Room Number</div>
-          <div class="flex text-slate-400 text-base text-center justify-center  ">
-            <input type="text" value="UB" disabled="disabled" class="appearance-none block bg-gray-200 text-gray-700 border border-gray-200 rounded-l rounded-r-none py-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-center font-sans text-xl w-16 ">
-         <input type="text" inputMode="numeric" pattern="[0-9]*" minlength="5" maxlength="5" placeholder="20701" id="roomNum" class="appearance-none block bg-gray-200 text-gray-700 border rounded-r rounded-l-none py-3  leading-tight focus:outline-none focus:bg-white focus:border-gray-500 text-center font-sans text-xl ">
-      
-        </div>
-          <p class="text-gray-600 text-base text-center mt-2">
-            <button type="submit" id="roomNumBtn" class=" bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-1/2 ">Check</button>
-          </p>
-        </div>
-
-        <div id="result" class=" w-full text-center text-2xl bg-neutral-800 "></div>
-
-        <div class="flex items-end justify-center px-6 py-4 h-auto bg-neutral-800 ">
-
-          <a href="http://github.com/nur-zaman" target="_blank"><span class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"><i class="fab fa-github"></i></span></a>
-
-         
-        </div>
-
+        <p class="text-gray-600 text-base text-center mt-2">
+          <button
+            type="submit"
+            id="roomNumBtn"
+            class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow w-1/2"
+          >
+            Check
+          </button>
+        </p>
       </div>
-      
-    <div class=" text-center "><a href="fullList.html" target="_blank" >View Complete List of Empty Classroom</a></div>
 
-      <script src="script.js"></script>   
-</body>
+      <div id="result" class="w-full text-center text-2xl bg-neutral-800"></div>
+
+      <div
+        class="flex items-end justify-center px-6 py-4 h-auto bg-neutral-800"
+      >
+        <a href="http://github.com/nur-zaman" target="_blank"
+          ><span
+            class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
+            ><i class="fab fa-github"></i></span
+        ></a>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="fullList.html" target="_blank"
+        >View Complete List of Empty Classroom</a
+      >
+    </div>
+
+    <script src="script.js"></script>
+    <script src="serviceWorker.js"></script>
+  </body>
 </html>
