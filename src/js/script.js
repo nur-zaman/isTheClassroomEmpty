@@ -4,9 +4,9 @@ const BTN = document.getElementById("roomNumBtn");
 const FORM = document.getElementById("roomNum");
 const RESULT = document.getElementById("result");
 
-const date = moment().format("YYYY-MM-DD");
-const day = moment().format("dddd");
-const now = moment().toString();
+let date = moment().format("YYYY-MM-DD");
+let day = moment().format("dddd");
+let now = moment().toString();
 
 // const day = 'Tuesday'
 // const now = 'Tue Jun 30 2022 05:05:34 pm'
@@ -54,6 +54,10 @@ if (getDataFromLocalStorage(semester) == null) {
 }
 BTN.addEventListener("click", () => {
   let number = FORM.value;
+date = moment().format("YYYY-MM-DD");
+day = moment().format("dddd");
+now = moment().toString();
+
   if (number.length > 4 && /^\d*$/.test(number)) {
     let roomNo = "UB" + number;
     let data = getDataFromLocalStorage(semester);
