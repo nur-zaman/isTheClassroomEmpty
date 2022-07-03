@@ -1,3 +1,4 @@
+const version = 'V1.1.1'
 const semester = "summer2022V2";
 
 const BTN = document.getElementById("roomNumBtn");
@@ -18,6 +19,21 @@ const saveDataToLocalStorage = (data) => {
 const getDataFromLocalStorage = (key) => {
   return JSON.parse(localStorage.getItem(key));
 };
+
+// const clearCache = ()=>{
+//   console.log(1);
+//   console.log(localStorage.getItem('version')!=version);
+//   if(localStorage.getItem('version')!=version){
+  
+//     caches.keys().then(function(names) {
+//       for (let name of names)
+//           caches.delete(name);
+//   });
+//   localStorage.setItem('version', version);
+//   }
+// }
+
+// clearCache()
 
 const getRoomInfo = (data, roomNo) => {
   let room = _.find(data, function (o) {
@@ -68,11 +84,15 @@ now = moment().toString();
   }
 });
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function() {
-    navigator.serviceWorker
-      .register("serviceWorker.js")
-      .then(res => console.log("service worker registered"))
-      .catch(err => console.log("service worker not registered", err))
-  })
-}
+
+
+
+
+// if ("serviceWorker" in navigator) {
+//   window.addEventListener("load", function() {
+//     navigator.serviceWorker
+//       .register("serviceWorkerV1.1.js")
+//       .then(res => console.log("service worker registered"))
+//       .catch(err => console.log("service worker not registered", err))
+//   })
+// }

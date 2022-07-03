@@ -1,6 +1,6 @@
-
+const version = 'V1.1.1'
 const semester = 'summer2022V2'
-const ITCE = "isTheClassroomEmptyV1.1"
+const ITCE = `isTheClassroomEmpty${version}`
 const assets = [
     "favicon/site.webmanifest",
     "favicon/favicon.ico ",
@@ -12,7 +12,7 @@ const assets = [
   "js/fullList.js",
   "js/script.js",
   'js/lodash.js',
-  'serviceWorker.js',
+  `serviceWorker.js`,
   `data/${semester}.json`
 ]
 
