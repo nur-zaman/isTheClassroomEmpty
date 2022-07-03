@@ -1,5 +1,5 @@
 
-const ITCE = "isTheClassroomEmptyV1"
+const ITCE = "isTheClassroomEmptyV1.1"
 const assets = [
     "favicon/site.webmanifest",
     "favicon/favicon.ico ",
@@ -7,8 +7,10 @@ const assets = [
     "favicon/favicon-16x16.png ",
   "index.html",
   "fullList.html",
-  "fullList.js",
-  "script.js",
+  "styles.css",
+  "js/fullList.js",
+  "js/script.js",
+  'js/lodash.js',
   'serviceWorker.js',
   'data/summer2022.json'
 ]
