@@ -1,4 +1,4 @@
-const semester = "summer2022";
+const semester = "summer2022V2";
 const getDataFromLocalStorage = (key) => {
   return JSON.parse(localStorage.getItem(key));
 };

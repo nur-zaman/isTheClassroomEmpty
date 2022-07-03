@@ -1,4 +1,4 @@
-const semester = "summer2022";
+const semester = "summer2022V2";
 
 const BTN = document.getElementById("roomNumBtn");
 const FORM = document.getElementById("roomNum");
