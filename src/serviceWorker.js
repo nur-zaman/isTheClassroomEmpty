@@ -1,4 +1,5 @@
 
+const semester = 'summer2022V2'
 const ITCE = "isTheClassroomEmptyV1.1"
 const assets = [
     "favicon/site.webmanifest",
@@ -12,7 +13,7 @@ const assets = [
   "js/script.js",
   'js/lodash.js',
   'serviceWorker.js',
-  'data/summer2022.json'
+  `data/${semester}.json`
 ]
 
 self.addEventListener("install", installEvent => {
