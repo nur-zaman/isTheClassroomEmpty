@@ -50,10 +50,11 @@
       gtag("config", "G-TM2958SL6N");
     </script>
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/lodash.js"></script>
     <script src="js/moment.js"></script>
 
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
@@ -73,6 +74,14 @@
       class="max-w-sm rounded overflow-hidden shadow-lg shadow-slate-900 mx-auto my-8 h-fit"
     >
       <div class="mb-2 flex justify-center"></div>
+
+<!-- custom time -->
+
+
+
+
+
+
 
       <div class="px-6 py-4 bg-neutral-800">
         <div class="font-bold text-xl mb-2 text-center">Enter Room Number</div>
@@ -105,22 +114,67 @@
         </p>
       </div>
 
-      <div id="result" class="w-full text-center text-2xl bg-neutral-800"></div>
 
       <div
-        class="flex items-end justify-center px-6 py-4 h-auto bg-neutral-800"
-      >
-        <a href="http://github.com/nur-zaman" target="_blank"
-          ><span
-            class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
-            ><i class="fab fa-github"></i></span
-        ></a>
+      class="flex items-center px-6 pb-4 h-auto bg-neutral-800 flex-col"
+    >
+
+    <script>
+      function tog() {
+  var element = document.getElementById("cus-time");
+  element.classList.toggle("hidden");
+}
+
+    </script>
+
+    <button onclick="tog()" class="  bg-white hover:bg-gray-100 text-gray-800 font-semibold  px-4 border border-gray-400 rounded shadow " >Enter Custom Time</button>
+      <!-- <a href="http://github.com/nur-zaman" target="_blank"
+        ><span
+          class="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
+          ><i class="fab fa-github"></i></span
+      ></a> -->
+  
+    </div>
+
+
+    
+      <div class="bg-neutral-800 flex justify-center pb-4 text-black font-mono hidden" id="cus-time">
+        <input type="date" id="date" class="px-1">
+
+        <script>
+          document.getElementById('date').value = moment().format('YYYY-MM-DD');
+          </script>
+
+        <input type="time" id="time" class="px-4">
+
+        <script>
+          document.getElementById('time').value = moment().format("HH:mm");
+          </script>
       </div>
+
+
+      
+      <div id="result" class="w-full text-center text-2xl bg-neutral-800 pb-5"></div>
+
+
+
+
+
     </div>
 
     <div class="text-center">
-      <a href="fullList.html">View Complete List of Empty Classroom</a>
+
+      <a href="fullList.html"><button class=" bg-neutral-800 hover:bg-slate-900 shadow-md shadow-slate-900 hover:shadow-gray-400 text-white font-bold py-2 px-4 rounded ">View Complete List of Empty Classroom</button></a>
     </div>
+
+
+    <a class="fixed flex items-center justify-center h-8 pr-2 pl-1 bg-blue-600 rounded-full bottom-0 right-0 mr-4 mb-4 shadow-lg text-blue-100 hover:bg-blue-600" href="https://twitter.com/lofiui" target="_top">
+      <div class="flex items-center justify-center h-6 w-6 bg-blue-500 rounded-full">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" class="r-jwli3a r-4qtqp9 r-yyyyoo r-16y2uox r-1q142lx r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1srniue"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
+      </div>
+      <span class="text-sm ml-1 leading-none">nur</span>
+    </a>
+
 
     <script src="js/script.js"></script>
   </body>
