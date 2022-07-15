@@ -5,16 +5,20 @@ const getDataFromLocalStorage = (key) => {
 
 data = getDataFromLocalStorage(semester);
 
-const date = moment().format("YYYY-MM-DD");
+const datePicker = document.querySelector("#date")
+const timePicker = document.querySelector("#time")
 
-const day = moment().format("dddd");
-const now = moment().toString();
+datePicker.value = moment().format('YYYY-MM-DD');
+timePicker.value = moment().format("HH:mm");
 
-// const now = 'Sun Jul 3 2022 12:35:34 pm'
-// const day = 'Sunday'
+let date = moment().format("YYYY-MM-DD");
+
+let day = moment(date).format("dddd");
+let now = moment().toString();
 
 
 const addData = (tableData) => {
+
   let newRow = document.createElement("tr");
   let newCell = document.createElement("td");
   newCell.classList.add("border", "border-slate-600");
@@ -25,6 +29,15 @@ const addData = (tableData) => {
 
 let classRoomList = [];
 const showFullList = () => {
+  date = moment(datePicker.valueAsNumber).format("YYYY-MM-DD")
+
+  day = moment(date).format("dddd");
+  let time = moment(`${date}T${timePicker.value}`).format("hh:mm:ss a")
+
+
+  now = `${date} ${time}`
+
+
   data.forEach((i) => {
     classRoomList.push(i.room);
   }
@@ -34,20 +47,40 @@ const showFullList = () => {
   classRoomList = [...new Set(classRoomList)]
 
   data.forEach(i => {
+
+
+
     if (
       (
         i.day == day &&
         moment(now).isBetween(`${date} ${i.start}`, `${date} ${i.end}`)
       )
     ) {
-      classRoomList.pop(i.room);
+
+
+      classRoomList.splice(classRoomList.indexOf(i.room), 1);
+
     }
   });
+
+  document.querySelector("#rows").innerHTML = ''
   for (const i of classRoomList) {
     addData(i);
   }
 
-  document.querySelector("#update").innerHTML = moment();
+  // document.querySelector("#update").innerHTML = moment();
 };
 
 showFullList();
+
+const pickers = document.querySelector('#cus-time');
+
+pickers.addEventListener('change', (event) => {
+
+  classRoomList = [];
+  showFullList();
+});
+
+
+
+

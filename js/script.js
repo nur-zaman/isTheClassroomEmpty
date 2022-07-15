@@ -5,12 +5,16 @@ const BTN = document.getElementById("roomNumBtn");
 const FORM = document.getElementById("roomNum");
 const RESULT = document.getElementById("result");
 
+const datePicker = document.querySelector("#date")
+const timePicker = document.querySelector("#time")
+
+datePicker.value = moment().format('YYYY-MM-DD');
+timePicker.value = moment().format("HH:mm");
+
 let date = moment().format("YYYY-MM-DD");
 let day = moment().format("dddd");
 let now = moment().toString();
 
-// const day = 'Tuesday'
-// const now = 'Tue Jun 30 2022 05:05:34 pm'
 
 const saveDataToLocalStorage = (data) => {
   localStorage.setItem(`${semester}`, JSON.stringify(data));
@@ -20,23 +24,12 @@ const getDataFromLocalStorage = (key) => {
   return JSON.parse(localStorage.getItem(key));
 };
 
-// const clearCache = ()=>{
-//   console.log(1);
-//   console.log(localStorage.getItem('version')!=version);
-//   if(localStorage.getItem('version')!=version){
-  
-//     caches.keys().then(function(names) {
-//       for (let name of names)
-//           caches.delete(name);
-//   });
-//   localStorage.setItem('version', version);
-//   }
-// }
 
-// clearCache()
 
 const getRoomInfo = (data, roomNo) => {
+
   let room = _.find(data, function (o) {
+
     return (
       o.room == roomNo &&
       o.day == day &&
@@ -47,10 +40,11 @@ const getRoomInfo = (data, roomNo) => {
 };
 
 const showOutput = (roomInfo) => {
+
   if (roomInfo == undefined || roomInfo == null) {
     RESULT.innerHTML = "ROOM IS EMPTY";
   } else {
-    RESULT.innerHTML = `Room is not empty ,<br> ${roomInfo.course} Section ${roomInfo.section}'s class is being held till ${roomInfo.end} `;
+    RESULT.innerHTML = `Room's not empty,<br> ${roomInfo.course} Section ${roomInfo.section}'s class is being held till ${roomInfo.end} `;
   }
 };
 
@@ -70,9 +64,14 @@ if (getDataFromLocalStorage(semester) == null) {
 }
 BTN.addEventListener("click", () => {
   let number = FORM.value;
-date = moment().format("YYYY-MM-DD");
-day = moment().format("dddd");
-now = moment().toString();
+  date = moment(datePicker.valueAsNumber).format("YYYY-MM-DD")
+
+  day = moment(date).format("dddd");
+  let time = moment(`${date}T${timePicker.value}`).format("hh:mm:ss a")
+
+
+  now = `${date} ${time}`
+
 
   if (number.length > 4 && /^\d*$/.test(number)) {
     let roomNo = "UB" + number;
