@@ -53,7 +53,8 @@ const showFullList = () => {
     if (
       (
         i.day == day &&
-        moment(now).isBetween(`${date} ${i.start}`, `${date} ${i.end}`)
+        (moment(now).isBetween(`${date} ${i.start}`, `${date} ${i.end}`) ||
+        (moment(`${now}`).format("h:mm a")==i.start))
       )
     ) {
 
