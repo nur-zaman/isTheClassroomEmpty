@@ -14,6 +14,7 @@ timePicker.value = moment().format("HH:mm");
 let date = moment().format("YYYY-MM-DD");
 let day = moment().format("dddd");
 let now = moment().toString();
+let time = ''
 
 
 const saveDataToLocalStorage = (data) => {
@@ -33,8 +34,9 @@ const getRoomInfo = (data, roomNo) => {
     return (
       o.room == roomNo &&
       o.day == day &&
-      moment(now).isBetween(`${date} ${o.start}`, `${date} ${o.end}`)
-    );
+      (moment(now).isBetween(`${date} ${o.start}`, `${date} ${o.end}`) ||
+      (moment(`${now}`).format("h:mm a")==o.start)))
+    
   });
   return room;
 };
@@ -67,11 +69,13 @@ BTN.addEventListener("click", () => {
   date = moment(datePicker.valueAsNumber).format("YYYY-MM-DD")
 
   day = moment(date).format("dddd");
-  let time = moment(`${date}T${timePicker.value}`).format("hh:mm:ss a")
+  time = moment(`${date}T${timePicker.value}`).format("hh:mm:ss a")
 
+  
 
   now = `${date} ${time}`
 
+  console.log(moment(`${now}`).format("h:mm a")=='9:30 am');
 
   if (number.length > 4 && /^\d*$/.test(number)) {
     let roomNo = "UB" + number;
