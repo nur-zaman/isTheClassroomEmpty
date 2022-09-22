@@ -1,5 +1,5 @@
-const version = 'V1.1.1'
-const semester = "summer2022V2";
+// const version = 'V1.1.1'
+// const semester = "summer2022V2";
 
 const BTN = document.getElementById("roomNumBtn");
 const FORM = document.getElementById("roomNum");
@@ -17,13 +17,13 @@ let now = moment().toString();
 let time = ''
 
 
-const saveDataToLocalStorage = (data) => {
-  localStorage.setItem(`${semester}`, JSON.stringify(data));
-};
+// const saveDataToLocalStorage = (data) => {
+//   localStorage.setItem(`${semester}`, JSON.stringify(data));
+// };
 
-const getDataFromLocalStorage = (key) => {
-  return JSON.parse(localStorage.getItem(key));
-};
+// const getDataFromLocalStorage = (key) => {
+//   return JSON.parse(localStorage.getItem(key));
+// };
 
 
 
@@ -50,20 +50,20 @@ const showOutput = (roomInfo) => {
   }
 };
 
-if (getDataFromLocalStorage(semester) == null) {
-  let url = `data\/${semester}.json`;
+// if (getDataFromLocalStorage(semester) == null) {
+//   let url = `data\/${semester}.json`;
 
-  fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      saveDataToLocalStorage(data);
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-}
+//   fetch(url)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       saveDataToLocalStorage(data);
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// }
 BTN.addEventListener("click", () => {
   let number = FORM.value;
   date = moment(datePicker.valueAsNumber).format("YYYY-MM-DD")
