@@ -1,9 +1,9 @@
-const semester = "summer2022V2";
-const getDataFromLocalStorage = (key) => {
-  return JSON.parse(localStorage.getItem(key));
-};
 
-data = getDataFromLocalStorage(semester);
+// const getDataFromLocalStorage = (key) => {
+//   return JSON.parse(localStorage.getItem(key));
+// };
+
+data = getDataFromLocalStorage(getSemesterName());
 
 const datePicker = document.querySelector("#date")
 const timePicker = document.querySelector("#time")
